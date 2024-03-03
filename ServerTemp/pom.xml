@@ -160,6 +160,19 @@
                     </systemPropertyVariables>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>fr.paul.temp.utils.App</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <profiles>
@@ -196,6 +209,7 @@
             </build>
             <properties>
                 <quarkus.package.type>native</quarkus.package.type>
+                <quarkus.package.type>uber-jar</quarkus.package.type>
             </properties>
         </profile>
     </profiles>
